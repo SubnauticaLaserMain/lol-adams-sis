@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>How to make an entire surcise</title>
+    </head>
+    <body>
+        <p><span>if game.PlaceId == 5611648039 then
+            local PlaceId = game.PlaceId
+            local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+            local Window = Library.CreateLib("Murder Party Scripts", "Sentinel")
+            local Main = Window:NewTab("Main & Scripts")
+            local MainSection = Main:NewSection("Main")
+            MainSection:NewSlider("WalkSpeed", "??", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+            end)
+            MainSection:NewSlider("JumpPower", "??", 1000, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+                game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+            end)
+            MainSection:NewButton("Reset WK/JP", "ButtonInfo", function()
+                game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+            end)
+            local MainSection = Main:NewSection("Scripts Murder Party Scripts")
+            MainSection:NewButton("ESP/Coin Collecter | MP Life", "by ReWriter", function()
+                    --[[
+                WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+            ]]
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/artas01/artas01/c50dad68804d1656a15f5357f9333daa4a4f15af/MurderParty_bylolProplayerlol'))()
+            end)
+            MainSection:NewButton("Boo Hub", "By zachtheguerro", function()
+                loadstring(game:HttpGet(('https://raw.githubusercontent.com/zachisfunny/Murder-Party-Script/main/Script'),true))()
+            end)
+            MainSection:NewButton("Infinite Yeld", "Unknown", function()
+                loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+            end)
+            elseif game.PlaceId == 4623386862 or 5661005779 then
+                local PlaceId = game.PlaceId
+                local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+            local Window = Library.CreateLib("Piggy Scripts", "Sentinel")
+            local Main = Window:NewTab("Main & Scripts")
+            local MainSection = Main:NewSection("Main")
+            MainSection:NewSlider("WalkSpeed", "??", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+            end)
+            MainSection:NewSlider("JumpPower", "??", 1000, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+                game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+            end)
+            MainSection:NewButton("Reset WK/JP", "ButtonInfo", function()
+                game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+            end)
+            local MainSection = Main:NewSection("Scripts Piggy Scripts")
+            MainSection:NewButton("Vynixius", "by Vynixu", function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Piggy/Loader.lua"))()
+            end)
+            MainSection:NewButton("rb bit", "by Sweatsweatascat", function()
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/tip52/useless-projects/main/piggy%20rb%20battles%20bit'))()
+        
+                -- USE "loadstring(game:HttpGet(('https://pastebin.com/raw/MjBzRjmT'),true))()" FOR FLY + NOCLIP 
+            end)
+            MainSection:NewButton("ROBLOX RB battles Script", "by miumiu", function()
+                --[[
+            WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+        ]]
+        getgenv().RedKnocks = 0
+        getgenv().GreenKnocks = 0
+        getgenv().BlueKnocks = 0
+        getgenv().DiceColor = nil
+        getgenv().ItemColor = nil
+        getgenv().ItemName = nil
+        getgenv().Levers = {}
+        
+        local Character = game:GetService("Players").LocalPlayer.Character
+        local HRP = Character.HumanoidRootPart
+        local Humanoid = Character.Humanoid
+        
+        function noClip()
+            game:GetService("RunService").Stepped:connect(
+                function()
+                    Humanoid:ChangeState(11)
+                end
+            )
+        end
+        
+        noClip()
+        HRP.CFrame = CFrame.new(0, 256, 0)
+        print("Waiting 3 Minutes")
+        wait(180)
+        
+        local function knock()
+            wait(3 / 4)
+            for _, v in pairs(workspace.Alleys:GetDescendants()) do
+                if v:IsA("ClickDetector") and v.Parent:FindFirstChildOfClass("Sound") then
+                    local SFX = v.Parent:FindFirstChildOfClass("Sound")
+                    if SFX.SoundId == "rbxassetid://379484117" then
+                        local dX, dY, dZ = v.Parent.CFrame:components()
+                        HRP.CFrame = CFrame.new(x, y, z)
+                        if DiceColor == "Crimson" then
+                            SFX.Changed:Connect(
+                                function()
+                                    if DiceColor == "Crimson" then
+                                        getgenv().RedKnocks = getgenv().RedKnocks + 1
+                                    end
+                                end
+                            )
+                            fireclickdetector(v)
+                            HRP.CFrame = CFrame.new(dX, dY + 10, dZ)
+                            wait(6.5)
+                            print(getgenv().RedKnocks .. " | Total Red Knocks")
+                        elseif DiceColor == "Dark green" then
+                            SFX.Changed:Connect(
+                                function()
+                                    if DiceColor == "Dark green" then
+                                        getgenv().GreenKnocks = getgenv().GreenKnocks + 1
+                                    end
+                                end
+                            )
+                            fireclickdetector(v)
+                            HRP.CFrame = CFrame.new(dX, dY + 10, dZ)
+                            wait(6.5)
+                            print(getgenv().GreenKnocks .. " | Total Green Knocks")
+                        elseif DiceColor == "Lapis" then
+                            SFX.Changed:Connect(
+                                function()
+                                    if DiceColor == "Lapis" then
+                                        getgenv().BlueKnocks = getgenv().BlueKnocks + 1
+                                    end
+                                end
+                            )
+                            fireclickdetector(v)
+                            HRP.CFrame = CFrame.new(dX, dY + 10, dZ)
+                            wait(6.5)
+                            print(getgenv().BlueKnocks .. " | Total Blue Knocks")
+                        elseif DiceColor == "Temple" then
+                            fireclickdetector(v)
+                            HRP.CFrame = CFrame.new(dX, dY + 10, dZ)
+                            wait(8)
+                            HRP.CFrame = v.Parent.CFrame
+                        end
+                    end
+                end
+            end
+        end
+        
+        local function doKey()
+            wait(3 / 4)
+            for _, v in ipairs(workspace:GetChildren()) do
+                if v:IsA("Folder") and v:FindFirstChildOfClass("Part") then
+                    local Child = v:FindFirstChildOfClass("Part")
+                    if Child:FindFirstChild("NewItemPickupScript") then
+                        v.Name = "GameItems"
+                        for k, d in pairs(v:GetChildren()) do
+                            d.Name = "Item " .. tostring(d.BrickColor)
+                            if d.Name == "Item " .. ItemColor then
+                                HRP.CFrame = d.CFrame
+                                for i = 1, 7 do
+                                    wait(1 / 10)
+                                    fireclickdetector(d:FindFirstChildOfClass("ClickDetector"))
+                                end
+                                print("Picked up " .. ItemColor .. " Key")
+                            end
+                        end
+                    end
+                end
+            end
+        
+            for _, v in pairs(workspace.Alleys:GetDescendants()) do
+                if v:IsA("TouchTransmitter") then
+                    if v.Parent:FindFirstChildOfClass("Part") then
+                        local DoorPart = v.Parent:FindFirstChildOfClass("Part")
+                        v.Parent.Parent.Name = "Door " .. tostring(DoorPart.BrickColor)
+                        if v.Parent.Parent.Name == "Door " .. ItemColor then
+                            HRP.CFrame = v.Parent.CFrame
+                            for i = 1, 7 do
+                                wait(1 / 10)
+                                fireclickdetector(v.Parent:FindFirstChildOfClass("ClickDetector"))
+                            end
+                            print("Opened " .. ItemColor .. " Door")
+                        end
+                    end
+                end
+            end
+        end
+        
+        local function doMop()
+            wait(3 / 4)
+            for _, v in pairs(workspace.Alleys:GetDescendants()) do
+                if v:IsA("StringValue") and v.Value == "Mop" then
+                    HRP.CFrame = v.Parent.CFrame
+                    wait(1 / 2)
+                    fireclickdetector(v.Parent:FindFirstChildOfClass("ClickDetector"))
+                end
+            end
+        end
+        
+        local function doItem()
+            wait(3 / 4)
+            for _, v in pairs(workspace.GameItems:GetChildren()) do
+                if v.Mesh.TextureId == "http://www.roblox.com/asset/?id=36946043" then
+                    v.Name = "Mop"
+                elseif v.Mesh.TextureId == "http://www.roblox.com/asset/?id=70265794" then
+                    v.Name = "Screwdriver"
+                elseif v.Mesh.TextureId == "http://www.roblox.com/asset/?id=6550008" then
+                    v.Name = "Scissors"
+                end
+            end
+            HRP.CFrame = workspace.GameItems[ItemName].CFrame
+            local ItemPart = workspace.GameItems:FindFirstChild(ItemName)
+            for i = 1, 10 do
+                wait(1 / 10)
+                fireclickdetector(ItemPart:FindFirstChildOfClass("ClickDetector"))
+            end
+            if ItemName == "Mop" then
+                doMop()
+            end
+        end
+        
+        local function dice()
+            wait(3 / 4)
+            for _, v in pairs(workspace.Alleys:GetDescendants()) do
+                if v:IsA("Part") and v.BrickColor == BrickColor.new(DiceColor) and v:FindFirstChildOfClass("SpecialMesh") then
+                    if v:FindFirstChildOfClass("SpecialMesh").MeshId == "http://www.roblox.com/asset/?id=1529453" then
+                        local x, y, z = v.CFrame:components()
+                        HRP.CFrame = CFrame.new(x, y + 15, z)
+                        for k, d in pairs(v:GetChildren()) do
+                            d.Name = tostring(k)
+                        end
+                        if DiceColor == "Crimson" then
+                            for i = 1, getgenv().RedKnocks do
+                                fireclickdetector(v["2"])
+                                print(DiceColor .. " Dice Pressed " .. tostring(i) .. " Times.")
+                                wait(1.3)
+                            end
+                        elseif DiceColor == "Dark green" then
+                            for i = 1, getgenv().GreenKnocks do
+                                fireclickdetector(v["2"])
+                                print(DiceColor .. " Dice Pressed " .. tostring(i) .. " Times.")
+                                wait(1.3)
+                            end
+                        elseif DiceColor == "Lapis" then
+                            for i = 1, getgenv().BlueKnocks do
+                                fireclickdetector(v["2"])
+                                print(DiceColor .. " Dice Pressed " .. tostring(i) .. " Times.")
+                                wait(1.3)
+                            end
+                        end
+                    end
+                end
+            end
+        end
+        
+        local function doPuzzle1()
+            wait(5)
+            for _, v in pairs(workspace.Alleys:GetDescendants()) do
+                if v:IsA("ClickDetector") and v.Parent.Parent.Parent.Name == "LeverEvent" then
+                    table.insert(Levers, v)
+                end
+            end
+            wait(2)
+            getgenv().FirstGate = Levers[1].Parent.Parent.Parent.Gate
+            print("Bruteforcing Levers")
+            while FirstGate.Position == Vector3.new(947.0625, 121.687515, 13.3750124) and wait() do
+                for i = 1, #Levers do
+                    local RandomLever = math.random(1, #Levers)
+                    fireclickdetector(Levers[RandomLever])
+                end
+            end
+        end
+        
+        local function doPuzzle2()
+            wait(5)
+            if FirstGate.Position ~= Vector3.new(947.0625, 121.687515, 13.3750124) then
+                HRP.CFrame = CFrame.new(945.512, 117 + 3, 13.7)
+                wait(2)
+                for _, v in pairs(workspace.Alleys:GetDescendants()) do
+                    if v:isA("ClickDetector") and v.Parent.Parent.Parent.Name == "TorchEvent" then
+                        HRP.CFrame = v.Parent.CFrame
+                        for i = 1, 7 do
+                            wait(1 / 10)
+                            fireclickdetector(v)
+                        end
+                        print("Cleared Torch")
+                    end
+                end
+            end
+        end
+        
+        local function doPuzzle3()
+            wait(5)
+            for _, v in pairs(workspace.Alleys:GetDescendants()) do
+                if v:IsA("ClickDetector") and v.Parent.Parent.Parent.Name == "LeverEvent" then
+                    table.insert(Levers, v)
+                    HRP.CFrame = v.Parent.CFrame
+                end
+            end
+            wait(2)
+            getgenv().SecondGate = Levers[1].Parent.Parent.Parent.Gate2
+            print("Bruteforcing Levers")
+            while SecondGate.Position == Vector3.new(963.1875, 121.687515, 40.1750259) and wait() do
+                for i = 1, #Levers do
+                    local RandomLever = math.random(1, #Levers)
+                    fireclickdetector(Levers[RandomLever])
+                end
+            end
+            HRP.CFrame = CFrame.new(975.449951, 120, -59.6749878)
+        end
+        
+        ItemColor = "Really red"
+        doKey()
+        
+        ItemColor = "Neon orange"
+        doKey()
+        
+        ItemColor = "Toothpaste"
+        doKey()
+        
+        ItemColor = "Gold"
+        doKey()
+        
+        ItemColor = "Alder"
+        doKey()
+        
+        ItemColor = "Institutional white"
+        doKey()
+        
+        ItemName = "Mop"
+        doItem()
+        
+        DiceColor = "Crimson"
+        knock()
+        dice()
+        
+        DiceColor = "Dark green"
+        knock()
+        dice()
+        
+        DiceColor = "Lapis"
+        knock()
+        dice()
+        
+        DiceColor = "Temple"
+        knock()
+        
+        doPuzzle1()
+        doPuzzle2()
+        doPuzzle3()
+        
+        local CodeMsg = Instance.new("Message", workspace)
+        CodeMsg.Text = tostring(getgenv().RedKnocks .. "-" .. getgenv().GreenKnocks .. "-" .. getgenv().BlueKnocks)
+            end)
+            MainSection:NewButton("Infinite Yeld", "??", function()
+                loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+            end)
+        elseif game.PlaceId == 6872265039 then
+            PlaceId = game.PlaceId
+            local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+            local Window = Library.CreateLib("Bedwars Scripts | Allways use ALTS", "Sentinel")
+            local BMain = Window:NewTab("Main & Scripts")
+            local BMainSection = BMain:NewSection("Main")
+            BMainSection:NewSlider("WalkSpeed", "??", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+            end)
+            BMainSection:NewSlider("JumpPower", "??", 1000, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+                game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+            end)
+            BMainSection:NewButton("Reset WK/JP", "ButtonInfo", function()
+                game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+            end)
+            local BMainSection = BMain:NewSection("Scripts Bedwars Scripts")
+            BMainSection:NewButton("Vape V4", "by 7GrandDad", function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+            end)
+            BMainSection:NewButton("BedWars CRACK", "by destructive", function()
+                --[[
+            WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+        ]]
+        game.Players.LocalPlayer.Chatted:Connect(function(msg)
+           if msg == ";crash" then
+        getgenv().stop = false
+        local ScreenGui = Instance.new("ScreenGui")
+        local Frame = Instance.new("Frame")
+        local a = Instance.new("TextLabel")
+        local Ping = Instance.new("TextLabel")
+        ScreenGui.Parent = game.CoreGui
+        ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+        ScreenGui.IgnoreGuiInset = true
+        Frame.Parent = ScreenGui
+        Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+        Frame.Size = UDim2.new(1000, 1093, 1000, 1000)
+        coroutine.wrap(function()
+           while wait() do
+               ScreenGui.Enabled = not getgenv().stop
+               end
+        end)()
+        a.Name = "a"
+        a.Parent = Frame
+        a.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        a.BackgroundTransparency = 1.000
+        a.Position = UDim2.new(0.000421353558, 0, 0.000217851717, 0)
+        a.Size = UDim2.new(0, 200, 0, 50)
+        a.Font = Enum.Font.SourceSans
+        a.Text = "Server Being Crashed"
+        a.TextColor3 = Color3.fromRGB(255, 255, 255)
+        a.TextSize = 100.000
+        
+        Ping.Name = "Check Your Ping"
+        Ping.Parent = Frame
+        Ping.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        Ping.BackgroundTransparency = 1.000
+        Ping.Position = UDim2.new(0.000418075486, 0, 0.000570347882, 0)
+        Ping.Size = UDim2.new(0, 200, 0, 50)
+        Ping.Font = Enum.Font.SourceSans
+        Ping.Text = "Status: Waiting For Game..."
+        Ping.TextColor3 = Color3.fromRGB(255, 255, 255)
+        Ping.TextSize = 100.000
+        
+        -- Scripts:
+        repeat wait() until game:IsLoaded() and game.Players.LocalPlayer.Character ~= nil and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and (game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position - game:GetService("Workspace").SpectatorPlatform.floor.Position).Magnitude > 50
+        Ping.Text = "Stage 1"
+        
+        game.RunService.RenderStepped:Connect(function()
+        
+           local args = {
+               [1] = {
+                   ["raised"] = true
+               }
+           }
+        
+           game:GetService("ReplicatedStorage"):WaitForChild("rbxts_include"):WaitForChild("node_modules"):WaitForChild("@rbxts"):WaitForChild("net"):WaitForChild("out"):WaitForChild("_NetManaged"):WaitForChild("UseInfernalShield"):FireServer(unpack(args))
+        
+        end)
+        spawn(function()
+        wait(10)
+        Ping.Text = "Stage 2 (crashing)"
+        local args = {
+           [1] = "HAVE FUN",
+           [2] = "All"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer(unpack(args))
+        coroutine.wrap(function()
+           while wait(3.5) do
+        local args = {
+           [1] = "Get Crashed Noobs!",
+           [2] = "All"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer(unpack(args))
+        end
+        end)()
+        coroutine.wrap(function()
+        while wait() do
+        task.wait(1)
+        if game.Players.LocalPlayer.Character ~= nil and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") ~= nil and getgenv().stop == false then
+        game.Players.LocalPlayer.Character.HumanoidRootPart:Destroy()
+        game:GetService("ReplicatedStorage"):WaitForChild("rbxts_include"):WaitForChild("node_modules"):WaitForChild("@rbxts"):WaitForChild("net"):WaitForChild("out"):WaitForChild("_NetManaged"):WaitForChild("ResetCharacter"):FireServer()
+        end
+        end
+        end)()
+        end)
+        elseif msg == ";uncrash" then
+           getgenv().stop = true
+        elseif msg == ';recrash' then
+           getgenv().stop = false
+               end
+        end)
+            end)
+            BMainSection:NewButton("Bow Silent Aim Reach And More", "by robloxscriptparadis", function()
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/XorV2/script/main/Unfair'))()
+            end)
+            BMainSection:NewButton("auto win", "by heuku", function()
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/boatDeckRoblox/boat-Hub_loadstringRoblox/main/lol'))()
+            end)
+        end</span></p>
+    </body>
+</html>
